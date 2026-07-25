@@ -2,16 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ProjectImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-import { getProjectBySlug, getProjects, CATEGORY_LABELS } from "@/lib/data/projects";
+import { getProjectBySlug, CATEGORY_LABELS } from "@/lib/data/projects";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
 };
-
-export async function generateStaticParams() {
-  const projects = await getProjects();
-  return projects.map((p) => ({ slug: p.slug }));
-}
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
