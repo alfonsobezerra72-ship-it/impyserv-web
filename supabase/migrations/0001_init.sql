@@ -6,7 +6,7 @@ create table products (
   brand text not null,
   capacity_btu integer not null,
   type text not null check (type in ('split', 'central', 'vrf')),
-  price numeric(10,2) not null,
+  price numeric(10,2),
   image_url text,
   description text,
   active boolean not null default true,

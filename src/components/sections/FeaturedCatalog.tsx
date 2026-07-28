@@ -9,7 +9,7 @@ export function FeaturedCatalog({ products }: { products: Product[] }) {
         Equipos disponibles
       </h2>
       <p className="mx-auto mt-2 max-w-2xl text-center text-muted">
-        Split, sistemas centrales y VRF en distintas capacidades, con precio y garantía de 2 años.
+        Split, sistemas centrales y VRF en distintas capacidades, con garantía de 2 años.
       </p>
 
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

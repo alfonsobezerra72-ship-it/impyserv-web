@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Card } from "@/components/ui/Card";
 import { ProductImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { LinkButton } from "@/components/ui/Button";
-import { formatPriceBs } from "@/lib/utils";
 import type { Product } from "@/types";
 
 export function ProductCard({ product }: { product: Product }) {
@@ -21,7 +20,6 @@ export function ProductCard({ product }: { product: Product }) {
         </span>
         <h3 className="mt-1 font-semibold text-primary">{product.name}</h3>
         <p className="mt-1 text-sm text-muted">{product.capacityBtu.toLocaleString("es-BO")} BTU</p>
-        <p className="mt-3 text-lg font-bold text-primary-accent">{formatPriceBs(product.price)}</p>
         <LinkButton
           href={`/contacto?producto=${product.id}`}
           variant="dark"

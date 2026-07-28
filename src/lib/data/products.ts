@@ -7,7 +7,7 @@ type ProductRow = {
   brand: string;
   capacity_btu: number;
   type: Product["type"];
-  price: number;
+  price: number | null;
   image_url: string | null;
   description: string | null;
   active: boolean;

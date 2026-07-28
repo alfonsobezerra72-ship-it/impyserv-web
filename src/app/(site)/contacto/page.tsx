@@ -3,7 +3,6 @@ import { PageHero } from "@/components/sections/PageHero";
 import { QuoteForm } from "@/components/forms/QuoteForm";
 import { BRAND } from "@/lib/constants";
 import { getProductById } from "@/lib/data/products";
-import { formatPriceBs } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Contacto",
@@ -53,8 +52,7 @@ export default async function ContactoPage({ searchParams }: ContactoPageProps) 
             <h2 className="text-xl font-semibold text-primary">Solicita tu cotización</h2>
             {product && (
               <p className="mt-1 text-sm text-muted">
-                Cotizando: <span className="font-semibold text-text">{product.name}</span> —{" "}
-                {formatPriceBs(product.price)}
+                Cotizando: <span className="font-semibold text-text">{product.name}</span>
               </p>
             )}
             <div className="mt-6">

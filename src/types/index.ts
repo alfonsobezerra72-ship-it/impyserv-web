@@ -6,7 +6,7 @@ export type Product = {
   brand: string;
   capacityBtu: number;
   type: ProductType;
-  price: number;
+  price: number | null;
   imageUrl: string | null;
   description: string | null;
   active: boolean;

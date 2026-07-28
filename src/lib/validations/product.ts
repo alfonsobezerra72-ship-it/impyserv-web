@@ -5,7 +5,10 @@ export const productSchema = z.object({
   brand: z.string().min(1, "Ingresa la marca"),
   capacityBtu: z.coerce.number().int().positive("Ingresa la capacidad en BTU"),
   type: z.enum(["split", "central", "vrf"], { message: "Selecciona el tipo" }),
-  price: z.coerce.number().positive("Ingresa un precio válido"),
+  price: z.preprocess(
+    (v) => (v === "" || v === null || v === undefined ? undefined : v),
+    z.coerce.number().positive("Ingresa un precio válido").optional()
+  ),
   description: z.string().optional(),
   active: z.coerce.boolean().default(true),
 });

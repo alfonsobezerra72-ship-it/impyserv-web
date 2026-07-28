@@ -32,7 +32,9 @@ export function ProductTable({ products }: { products: Product[] }) {
               <td className="px-4 py-3 font-medium text-text">{product.name}</td>
               <td className="px-4 py-3 text-muted">{product.brand}</td>
               <td className="px-4 py-3 text-muted">{product.capacityBtu.toLocaleString("es-BO")}</td>
-              <td className="px-4 py-3 text-text">{formatPriceBs(product.price)}</td>
+              <td className="px-4 py-3 text-text">
+                {product.price != null ? formatPriceBs(product.price) : "—"}
+              </td>
               <td className="px-4 py-3">
                 <span
                   className={cn(

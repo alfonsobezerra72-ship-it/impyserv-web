@@ -78,13 +78,12 @@ export function ProductForm({ action, product }: ProductFormProps) {
           </select>
         </div>
         <div>
-          <label className="text-sm font-medium text-text">Precio (Bs.)</label>
+          <label className="text-sm font-medium text-text">Precio (Bs.) — uso interno, ya no se muestra en el catálogo</label>
           <input
             type="number"
             step="1"
             name="price"
-            required
-            defaultValue={product?.price}
+            defaultValue={product?.price ?? ""}
             className="mt-1 w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
           />
         </div>
