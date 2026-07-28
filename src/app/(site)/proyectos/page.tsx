@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { PageHero } from "@/components/sections/PageHero";
 import { Card } from "@/components/ui/Card";
 import { ProjectImagePlaceholder } from "@/components/ui/ImagePlaceholder";
@@ -25,7 +26,13 @@ export default async function ProyectosPage() {
           {projects.map((project) => (
             <Link key={project.id} href={`/proyectos/${project.slug}`}>
               <Card className="h-full transition-shadow hover:shadow-md">
-                <ProjectImagePlaceholder className="h-44 w-full" />
+                {project.imageUrl ? (
+                  <div className="relative h-44 w-full">
+                    <Image src={project.imageUrl} alt={project.clientName} fill className="object-cover" />
+                  </div>
+                ) : (
+                  <ProjectImagePlaceholder className="h-44 w-full" />
+                )}
                 <div className="p-4">
                   <span className="text-xs font-semibold uppercase tracking-wide text-secondary">
                     {CATEGORY_LABELS[project.category]}

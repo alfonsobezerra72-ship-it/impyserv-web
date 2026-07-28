@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { ProjectImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { getProjectBySlug, CATEGORY_LABELS } from "@/lib/data/projects";
 
@@ -26,7 +27,13 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
   return (
     <article>
-      <ProjectImagePlaceholder className="h-64 w-full sm:h-96" />
+      {project.imageUrl ? (
+        <div className="relative h-64 w-full sm:h-96">
+          <Image src={project.imageUrl} alt={project.clientName} fill className="object-cover" priority />
+        </div>
+      ) : (
+        <ProjectImagePlaceholder className="h-64 w-full sm:h-96" />
+      )}
       <div className="mx-auto max-w-[800px] px-4 py-12 sm:px-6">
         <Link href="/proyectos" className="text-sm font-semibold text-primary-accent hover:underline">
           ← Ver todos los proyectos

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Card } from "@/components/ui/Card";
 import { ProductImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { LinkButton } from "@/components/ui/Button";
@@ -7,7 +8,13 @@ import type { Product } from "@/types";
 export function ProductCard({ product }: { product: Product }) {
   return (
     <Card className="flex h-full flex-col">
-      <ProductImagePlaceholder className="h-40 w-full" />
+      {product.imageUrl ? (
+        <div className="relative h-40 w-full">
+          <Image src={product.imageUrl} alt={product.name} fill className="object-cover" />
+        </div>
+      ) : (
+        <ProductImagePlaceholder className="h-40 w-full" />
+      )}
       <div className="flex flex-1 flex-col p-4">
         <span className="text-xs font-semibold uppercase tracking-wide text-secondary">
           {product.brand}
