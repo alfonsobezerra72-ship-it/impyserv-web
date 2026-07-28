@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
+import { MaintenanceBenefits } from "@/components/sections/MaintenanceBenefits";
 import { Card } from "@/components/ui/Card";
 import { QuoteForm } from "@/components/forms/QuoteForm";
 import { CheckCircle2 } from "lucide-react";
@@ -23,6 +24,7 @@ export default function MantenimientoPage() {
         title="Mantenimiento preventivo y correctivo"
         subtitle="Visitas únicas o planes periódicos para que tus equipos duren más y fallen menos."
       />
+      <MaintenanceBenefits />
       <section className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6">
         <div className="grid gap-10 md:grid-cols-2">
           <div>
