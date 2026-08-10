@@ -4,22 +4,9 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { productSchema } from "@/lib/validations/product";
+import { requireAdmin } from "@/lib/actions/require-admin";
 
 export type ProductActionState = { error: string | null };
-
-async function requireAdmin() {
-  const supabase = await createClient();
-  if (!supabase) {
-    throw new Error(
-      "Supabase no está configurado. Completa las variables de entorno (ver BLUEPRINT.md, Sección 10)."
-    );
-  }
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) throw new Error("No autorizado.");
-  return supabase;
-}
 
 async function uploadProductImage(
   supabase: NonNullable<Awaited<ReturnType<typeof createClient>>>,

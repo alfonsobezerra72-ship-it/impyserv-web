@@ -105,6 +105,15 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
   return PROJECTS.find((p) => p.slug === slug) ?? null;
 }
 
+export async function getProjectByIdAdmin(id: string): Promise<Project | null> {
+  const supabase = await createClient();
+  if (!supabase) return null;
+
+  const { data, error } = await supabase.from("projects").select("*").eq("id", id).single();
+  if (error || !data) return null;
+  return mapProjectRow(data as ProjectRow);
+}
+
 export const CATEGORY_LABELS: Record<Project["category"], string> = {
   salud: "Salud",
   hoteleria: "Hotelería",
