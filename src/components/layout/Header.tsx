@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { NAV_LINKS, BRAND } from "@/lib/constants";
 import { LinkButton } from "@/components/ui/Button";
@@ -7,7 +8,14 @@ export function Header() {
     <header className="sticky top-0 z-40 bg-primary text-white">
       <div className="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-2 font-heading text-lg font-bold">
-          <span className="inline-block h-8 w-8 rounded-full bg-secondary" aria-hidden />
+          <Image
+            src="/images/logo-impyserv.png"
+            alt=""
+            width={256}
+            height={239}
+            className="h-10 w-auto"
+            priority
+          />
           <span>
             {BRAND.name}
             <span className="block text-[10px] font-normal tracking-wide text-secondary">
