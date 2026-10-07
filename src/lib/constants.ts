@@ -15,6 +15,8 @@ export const BRAND = {
   },
 } as const;
 
+export const SITE_URL = "https://impyserv.com";
+
 export function whatsappLink(message?: string) {
   const base = `https://wa.me/${BRAND.phoneWhatsApp}`;
   if (!message) return base;
