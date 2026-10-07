@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { serviceSchema } from "@/lib/seo/schema";
 import Link from "next/link";
 import { PageHero } from "@/components/sections/PageHero";
 import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
@@ -12,6 +14,15 @@ export const metadata: Metadata = {
 export default function ProyectosGrandesPage() {
   return (
     <>
+      <JsonLd
+        data={serviceSchema({
+          name: "Proyectos grandes de climatización",
+          description:
+            "Climatización integral para hoteles, edificios y clínicas: VRF/VRV, ductos y cámaras frigoríficas.",
+          path: "/servicios/proyectos-grandes",
+          serviceType: "Proyectos de climatización industrial y comercial",
+        })}
+      />
       <PageHero
         title="Proyectos grandes"
         subtitle="Climatización integral para hoteles, edificios y clínicas — de punta a punta."

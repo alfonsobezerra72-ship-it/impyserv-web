@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { contactPageSchema } from "@/lib/seo/schema";
 import { PageHero } from "@/components/sections/PageHero";
 import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
 import { BRAND } from "@/lib/constants";
@@ -20,6 +22,7 @@ export default async function ContactoPage({ searchParams }: ContactoPageProps) 
 
   return (
     <>
+      <JsonLd data={contactPageSchema()} />
       <PageHero
         title="Contacto"
         subtitle="Escríbenos y coordinamos tu visita técnica o cotización."

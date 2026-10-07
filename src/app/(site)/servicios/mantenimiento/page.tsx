@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { serviceSchema } from "@/lib/seo/schema";
 import { PageHero } from "@/components/sections/PageHero";
 import { MaintenanceBenefits } from "@/components/sections/MaintenanceBenefits";
 import { Card } from "@/components/ui/Card";
@@ -20,6 +22,15 @@ const PLANS = [
 export default function MantenimientoPage() {
   return (
     <>
+      <JsonLd
+        data={serviceSchema({
+          name: "Mantenimiento de aire acondicionado",
+          description:
+            "Mantenimiento preventivo y correctivo de equipos de aire acondicionado, con planes mensuales, trimestrales y anuales para empresas y hoteles.",
+          path: "/servicios/mantenimiento",
+          serviceType: "Mantenimiento de aire acondicionado",
+        })}
+      />
       <PageHero
         title="Mantenimiento preventivo y correctivo"
         subtitle="Visitas únicas o planes periódicos para que tus equipos duren más y fallen menos."

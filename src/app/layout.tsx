@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/constants";
+import { businessSchema, websiteSchema } from "@/lib/seo/schema";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -17,6 +19,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  // "./" se resuelve por ruta: cada página declara su propia URL, sin query string.
+  alternates: { canonical: "./" },
   title: {
     default: "IMPYSERV — Especialistas en Climatización | Santa Cruz, Bolivia",
     template: "%s | IMPYSERV",
@@ -32,7 +36,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${poppins.variable} ${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <JsonLd data={businessSchema()} />
+        <JsonLd data={websiteSchema()} />
+        {children}
+      </body>
     </html>
   );
 }

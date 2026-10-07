@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { serviceSchema } from "@/lib/seo/schema";
 import { PageHero } from "@/components/sections/PageHero";
 import { Card } from "@/components/ui/Card";
 import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
@@ -20,6 +22,15 @@ const SYSTEMS = [
 export default function InstalacionPage() {
   return (
     <>
+      <JsonLd
+        data={serviceSchema({
+          name: "Instalación de equipos de climatización",
+          description:
+            "Instalación de aire acondicionado split, sistemas centrales, VRF/VRV, ductos y cámaras frigoríficas en Santa Cruz y toda Bolivia.",
+          path: "/servicios/instalacion",
+          serviceType: "Instalación de aire acondicionado",
+        })}
+      />
       <PageHero
         title="Instalación de equipos"
         subtitle="Desde el split de una habitación hasta sistemas VRF completos para tu edificio."
