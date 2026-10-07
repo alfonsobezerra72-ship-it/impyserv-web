@@ -29,7 +29,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
     <article>
       {project.imageUrl ? (
         <div className="relative h-64 w-full sm:h-96">
-          <Image src={project.imageUrl} alt={project.clientName} fill className="object-cover" priority />
+          <Image src={project.imageUrl} alt={project.clientName} fill sizes="100vw" className="object-cover" priority />
         </div>
       ) : (
         <ProjectImagePlaceholder className="h-64 w-full sm:h-96" />

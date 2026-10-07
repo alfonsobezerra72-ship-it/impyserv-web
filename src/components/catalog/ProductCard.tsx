@@ -9,7 +9,7 @@ export function ProductCard({ product }: { product: Product }) {
     <Card className="flex h-full flex-col">
       {product.imageUrl ? (
         <div className="relative h-40 w-full">
-          <Image src={product.imageUrl} alt={product.name} fill className="object-cover" />
+          <Image src={product.imageUrl} alt={product.name} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
         </div>
       ) : (
         <ProductImagePlaceholder className="h-40 w-full" />

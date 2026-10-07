@@ -9,6 +9,7 @@ export function Hero() {
         src="/images/hero-bg.png"
         alt="Técnicos de IMPYSERV con flotilla de vehículos"
         fill
+        sizes="100vw"
         priority
         className="object-cover object-bottom"
       />

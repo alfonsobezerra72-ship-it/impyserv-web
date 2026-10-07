@@ -22,7 +22,7 @@ export function FeaturedProjects({ projects }: { projects: Project[] }) {
               <Card className="h-full transition-shadow hover:shadow-md">
                 {project.imageUrl ? (
                   <div className="relative h-40 w-full">
-                    <Image src={project.imageUrl} alt={project.clientName} fill className="object-cover" />
+                    <Image src={project.imageUrl} alt={project.clientName} fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
                   </div>
                 ) : (
                   <ProjectImagePlaceholder className="h-40 w-full" />

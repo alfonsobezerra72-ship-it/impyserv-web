@@ -28,7 +28,7 @@ export default async function ProyectosPage() {
               <Card className="h-full transition-shadow hover:shadow-md">
                 {project.imageUrl ? (
                   <div className="relative h-44 w-full">
-                    <Image src={project.imageUrl} alt={project.clientName} fill className="object-cover" />
+                    <Image src={project.imageUrl} alt={project.clientName} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
                   </div>
                 ) : (
                   <ProjectImagePlaceholder className="h-44 w-full" />
