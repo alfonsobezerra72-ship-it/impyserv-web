@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { MaintenanceBenefits } from "@/components/sections/MaintenanceBenefits";
 import { Card } from "@/components/ui/Card";
-import { QuoteForm } from "@/components/forms/QuoteForm";
+import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
 import { CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -47,9 +47,9 @@ export default function MantenimientoPage() {
           </div>
           <div className="rounded-xl bg-surface p-6 sm:p-8">
             <h2 className="text-xl font-semibold text-primary">Solicita tu visita</h2>
-            <p className="mt-1 text-sm text-muted">Te contactamos para coordinar.</p>
+            <p className="mt-1 text-sm text-muted">Escríbenos por WhatsApp para coordinar.</p>
             <div className="mt-6">
-              <QuoteForm defaultServiceType="mantenimiento" />
+              <WhatsAppCTA message="Hola IMPYSERV, quisiera solicitar mantenimiento para mis equipos de aire acondicionado." />
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { Card } from "@/components/ui/Card";
-import { QuoteForm } from "@/components/forms/QuoteForm";
+import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
 
 export const metadata: Metadata = {
   title: "Instalación de equipos de climatización",
@@ -36,9 +36,9 @@ export default function InstalacionPage() {
           </div>
           <div className="rounded-xl bg-surface p-6 sm:p-8">
             <h2 className="text-xl font-semibold text-primary">Cuéntanos qué necesitas instalar</h2>
-            <p className="mt-1 text-sm text-muted">Te contactamos para coordinar una visita técnica.</p>
+            <p className="mt-1 text-sm text-muted">Escríbenos por WhatsApp para coordinar una visita técnica.</p>
             <div className="mt-6">
-              <QuoteForm defaultServiceType="instalacion" />
+              <WhatsAppCTA message="Hola IMPYSERV, necesito la instalación de un equipo de climatización." />
             </div>
           </div>
         </div>

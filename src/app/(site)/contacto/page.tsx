@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
-import { QuoteForm } from "@/components/forms/QuoteForm";
+import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
 import { BRAND } from "@/lib/constants";
 import { getProductById } from "@/lib/data/products";
 
@@ -50,15 +50,22 @@ export default async function ContactoPage({ searchParams }: ContactoPageProps) 
 
           <div className="rounded-xl bg-surface p-6 sm:p-8">
             <h2 className="text-xl font-semibold text-primary">Solicita tu cotización</h2>
-            {product && (
+            {product ? (
               <p className="mt-1 text-sm text-muted">
                 Cotizando: <span className="font-semibold text-text">{product.name}</span>
               </p>
+            ) : (
+              <p className="mt-1 text-sm text-muted">
+                Escríbenos por WhatsApp y te atendemos directamente.
+              </p>
             )}
             <div className="mt-6">
-              <QuoteForm
-                productId={product?.id}
-                defaultServiceType={product ? "cotizacion_equipo" : undefined}
+              <WhatsAppCTA
+                message={
+                  product
+                    ? `Hola IMPYSERV, quisiera cotizar el equipo: ${product.name}.`
+                    : "Hola IMPYSERV, quisiera agendar una visita técnica o solicitar una cotización."
+                }
               />
             </div>
           </div>

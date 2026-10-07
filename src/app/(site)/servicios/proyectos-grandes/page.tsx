@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/sections/PageHero";
-import { QuoteForm } from "@/components/forms/QuoteForm";
+import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
 
 export const metadata: Metadata = {
   title: "Proyectos grandes de climatización",
@@ -36,10 +36,10 @@ export default function ProyectosGrandesPage() {
           <div className="rounded-xl bg-surface p-6 sm:p-8">
             <h2 className="text-xl font-semibold text-primary">Cuéntanos sobre tu proyecto</h2>
             <p className="mt-1 text-sm text-muted">
-              Nuestro equipo técnico te contacta para coordinar una evaluación.
+              Escríbenos por WhatsApp y nuestro equipo técnico coordina una evaluación.
             </p>
             <div className="mt-6">
-              <QuoteForm defaultServiceType="proyecto_grande" />
+              <WhatsAppCTA message="Hola IMPYSERV, tengo un proyecto grande de climatización y quisiera una evaluación." />
             </div>
           </div>
         </div>

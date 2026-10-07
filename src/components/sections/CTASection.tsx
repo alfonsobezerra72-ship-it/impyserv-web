@@ -1,4 +1,4 @@
-import { QuoteForm } from "@/components/forms/QuoteForm";
+import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
 
 export function CTASection() {
   return (
@@ -9,11 +9,11 @@ export function CTASection() {
             ¿Necesitas una visita técnica o una cotización?
           </h2>
           <p className="mt-2 text-muted">
-            Escríbenos directo y coordinamos tu visita, o llena el formulario y te contactamos.
+            Escríbenos directo por WhatsApp y coordinamos tu visita.
           </p>
         </div>
-        <div className="mt-8 rounded-xl bg-white p-6 shadow-sm sm:p-8">
-          <QuoteForm />
+        <div className="mt-8 flex justify-center">
+          <WhatsAppCTA message="Hola IMPYSERV, quisiera coordinar una visita técnica o solicitar una cotización." />
         </div>
       </div>
     </section>
