@@ -21,6 +21,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   // "./" se resuelve por ruta: cada página declara su propia URL, sin query string.
   alternates: { canonical: "./" },
+  openGraph: {
+    type: "website",
+    siteName: "IMPYSERV",
+    locale: "es_BO",
+    url: "./",
+  },
+  twitter: { card: "summary_large_image" },
   title: {
     default: "IMPYSERV — Especialistas en Climatización | Santa Cruz, Bolivia",
     template: "%s | IMPYSERV",
